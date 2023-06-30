@@ -1,0 +1,1 @@
+from .OpensearchVectorDocumentV1 import OpensearchVectorDocumentV1 as OpensearchVectorDocumentV1

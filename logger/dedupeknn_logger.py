@@ -6,7 +6,7 @@ class DedupeKnn(BaseModel):
     LOG_FORMAT: str = '[%(asctime)s] p%(process)s {%(filename)s:%(lineno)d} %(levelname)s - %(message)s'
     LOG_LEVEL: str = "DEBUG"
 
-    # Logging config
+    # Logging properties
     version = 1
     disable_existing_loggers = False
     formatters = {

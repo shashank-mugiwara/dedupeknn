@@ -1,3 +1,5 @@
+aiohttp==3.8.4
+aiosignal==1.3.1
 altair==5.0.1
 anyio==3.7.0
 appnope==0.1.3
@@ -6,6 +8,7 @@ argon2-cffi-bindings==21.2.0
 arrow==1.2.3
 asttokens==2.2.1
 async-lru==2.0.2
+async-timeout==4.0.2
 attrs==23.1.0
 Babel==2.12.1
 backcall==0.2.0
@@ -24,7 +27,6 @@ debugpy==1.6.7
 decorator==5.1.1
 defusedxml==0.7.1
 duckdb==0.8.1
-en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0-py3-none-any.whl#sha256=0964370218b7e1672a30ac50d72cdc6b16f7c867496f1d60925691188f4d2510
 exceptiongroup==1.1.1
 executing==1.2.0
 Faker==18.10.1
@@ -32,6 +34,7 @@ fastapi==0.99.0
 fastjsonschema==2.17.1
 fasttext==0.9.2
 fqdn==1.5.1
+frozenlist==1.3.3
 fuzzywuzzy==0.18.0
 gensim==4.3.1
 h11==0.14.0
@@ -61,6 +64,7 @@ Levenshtein==0.21.1
 MarkupSafe==2.1.3
 matplotlib-inline==0.1.6
 mistune==2.0.5
+multidict==6.0.4
 murmurhash==1.0.9
 nbclient==0.8.0
 nbconvert==7.5.0
@@ -140,3 +144,4 @@ webcolors==1.13
 webencodings==0.5.1
 websocket-client==1.6.0
 websockets==11.0.3
+yarl==1.9.2

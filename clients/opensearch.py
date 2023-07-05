@@ -21,4 +21,5 @@ class LoadOpenSearchClient:
             )
             LoadOpenSearchClient._client = client
             return client
-
+        else:
+            return LoadOpenSearchClient._client

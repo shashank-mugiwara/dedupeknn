@@ -1,0 +1,1 @@
+from .FastTextModelLoader import FastTextModelLoader as FastTextModelLoader

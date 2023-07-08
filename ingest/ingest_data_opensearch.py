@@ -14,11 +14,11 @@ from clients import LoadOpenSearchClient
 from fastapi import APIRouter
 import json
 
+from utils.fast_text_utils import generate_sentence_vector
+
 router = APIRouter()
 opensearch_client = LoadOpenSearchClient().get_opensearch_client()
 config = opensearch_config.OpensearchConfig().get_config()
-
-from utils.fast_text_utils import generate_sentence_vector
 
 logger = logging.getLogger("dedupeknn")
 dictConfig(DedupeKnnLogger().dict())

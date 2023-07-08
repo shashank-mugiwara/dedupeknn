@@ -43,9 +43,9 @@ async def ingest_document(document: OpensearchVectorDocumentV1):
             rp = DocumentInsertResponse()
             rp.success = True
             rp.seq_no = response['_seq_no']
-            return JSONResponse(content=rp, status_code=status.HTTP_200_OK)
+            return JSONResponse(content=json.loads(rp.json()), status_code=status.HTTP_200_OK)
 
     rp = DocumentInsertResponse()
     rp.success = False
     rp.seq_no = 0
-    return JSONResponse(content=rp, status_code=status.HTTP_400_BAD_REQUEST)
+    return JSONResponse(content=json.loads(rp.json()), status_code=status.HTTP_400_BAD_REQUEST)

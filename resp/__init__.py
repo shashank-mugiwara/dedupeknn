@@ -1,1 +1,2 @@
 from .DocumentInsertResponse import DocumentInsertResponse
+from .BadRequestResponse import BadRequestResponse

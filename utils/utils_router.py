@@ -25,7 +25,7 @@ dictConfig(DedupeKnnLogger().dict())
 
 
 @router.post("/api/v1/vector/representation")
-def get_vector_for_sentence(document: OpensearchVectorDocumentV1):
+async def get_vector_for_sentence(document: OpensearchVectorDocumentV1):
     logger.info('Received request: {}'.format(jsonable_encoder(document)))
     sentence_vector = generate_sentence_vector(document.text)
     if sentence_vector is not None:

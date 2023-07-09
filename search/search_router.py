@@ -4,6 +4,8 @@ from logging.config import dictConfig
 from config import opensearch_config
 from starlette import status
 
+from search import address_match
+
 from fastapi.encoders import jsonable_encoder
 from starlette.responses import JSONResponse
 from resp import DocumentInsertResponse
@@ -36,6 +38,19 @@ async def get_similar_records_from_opensearch(req: KnnSimilaritySearch):
     sentence_vector = generate_sentence_vector(req.text)
     response = await get_similar_knn(vector=sentence_vector.tolist(), k=req.k, size=req.size)
     response = construct_similarity_response(opensearch_response=response)
+    return JSONResponse(content=response, status_code=status.HTTP_200_OK)
+
+
+@router.post("/api/v1/similarity/address/search")
+async def get_similar_records_from_opensearch(req: KnnSimilaritySearch):
+    logger.info("Got request for similarity match: {}".format(jsonable_encoder(req)))
+
+    if req.text is None or req.text == "":
+        return JSONResponse(content="Please give valid text.", status_code=status.HTTP_400_BAD_REQUEST)
+
+    sentence_vector = generate_sentence_vector(req.text)
+    response = await address_match(input_text=req.text, k=req.k, size=req.size,
+                                   vector=sentence_vector.tolist(), threshold=req.threshold)
     return JSONResponse(content=response, status_code=status.HTTP_200_OK)
 
 
